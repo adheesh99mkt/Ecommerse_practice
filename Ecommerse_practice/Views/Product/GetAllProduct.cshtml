@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Ecommerse_practice.Models;
+@{
+    List<Products> products = (List<Products>)ViewData["catalog"];
+    <h1>List of Products</h1>
+    <ol>
+        @{
+            foreach(Products product in products)
+            {
+                <li>
+                @product.Title
+                @product.Description
+                @product.UnitPrice
+                @product.ImageUrl
+                @product.Quantity
+                </li>
+            }
+        }
+    </ol>
+}
